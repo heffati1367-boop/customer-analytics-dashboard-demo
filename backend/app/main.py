@@ -5,11 +5,20 @@ from collections import Counter
 from pathlib import Path
 
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI(
     title="Customer Analytics Dashboard Demo",
     description="Privacy-safe analytics API powered by fictional customer data.",
     version="1.0.0",
+)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:5173", "http://127.0.0.1:5173"],
+    allow_credentials=False,
+    allow_methods=["GET"],
+    allow_headers=["*"],
 )
 
 DATA_FILE = Path(__file__).resolve().parents[2] / "data" / "sample_customers.csv"
