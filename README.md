@@ -1,6 +1,6 @@
 # Customer Analytics Dashboard Demo
 
-A privacy-safe portfolio project demonstrating customer analytics, KPI design, segmentation, and API development with synthetic data.
+A privacy-safe, full-stack portfolio project demonstrating customer analytics, KPI design, segmentation, API development, and dashboard visualization with synthetic data.
 
 > **Privacy notice:** This repository contains no real customer records, employer data, internal banking logic, or confidential files. Every sample record is fictional.
 
@@ -10,18 +10,22 @@ A privacy-safe portfolio project demonstrating customer analytics, KPI design, s
 - New, retained, and churned customer analysis
 - VIP customer identification
 - Executive KPI summaries
+- Interactive customer filtering
+- Responsive data visualization
 - A documented FastAPI analytics backend
 - Reproducible analysis using synthetic CSV data
 
 ## Tech stack
 
-- Python
-- FastAPI
+- Python and FastAPI
+- React and Vite
+- Recharts
 - SQL and analytical KPI concepts
-- React dashboard (planned)
 - Power BI-oriented metric design
 
 ## Quick start
+
+### 1. Start the API
 
 ```bash
 python -m venv .venv
@@ -34,7 +38,17 @@ pip install -r requirements.txt
 uvicorn backend.app.main:app --reload
 ```
 
-Open `http://127.0.0.1:8000/docs` to explore the API.
+The API documentation is available at `http://127.0.0.1:8000/docs`.
+
+### 2. Start the dashboard
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+Open `http://localhost:5173`.
 
 ## Available endpoints
 
@@ -46,16 +60,25 @@ Open `http://127.0.0.1:8000/docs` to explore the API.
 ## KPI definitions
 
 - **Active customers:** customers marked active in the sample period
+- **New customers:** active customers absent from the previous period
 - **Churn rate:** churned customers divided by the previous-period customer base
 - **Retention rate:** retained customers divided by the previous-period customer base
-- **VIP customers:** customers in the high-value segment
+- **VIP customers:** active customers in the high-value segment
+
+## Project structure
+
+```text
+backend/app/main.py       FastAPI analytics service
+data/sample_customers.csv Fictional demonstration dataset
+frontend/src/App.jsx      Interactive React dashboard
+frontend/src/styles.css   Responsive dashboard styling
+```
 
 ## Roadmap
 
-- Add an interactive React dashboard
-- Add trend charts and filters
-- Add automated tests
-- Add screenshots and a live demo
+- Add automated tests and CI
+- Add multi-period trend data
+- Add screenshots and a hosted live demo
 
 ## Author
 
