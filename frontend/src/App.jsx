@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
+import { DEMO_CUSTOMERS, DEMO_SEGMENTS, DEMO_SUMMARY } from "./demoData";
 import {
   Bar,
   BarChart,
@@ -35,7 +36,6 @@ function App() {
   const [segments, setSegments] = useState({});
   const [customers, setCustomers] = useState([]);
   const [segmentFilter, setSegmentFilter] = useState("All");
-  const [error, setError] = useState("");
 
   useEffect(() => {
     Promise.all([
@@ -48,9 +48,11 @@ function App() {
         setSegments(segmentData);
         setCustomers(customerData);
       })
-      .catch(() =>
-        setError("The API is unavailable. Start the FastAPI server and refresh.")
-      );
+      .catch(() => {
+        setSummary(DEMO_SUMMARY);
+        setSegments(DEMO_SEGMENTS);
+        setCustomers(DEMO_CUSTOMERS);
+      });
   }, []);
 
   const segmentData = useMemo(
@@ -71,10 +73,6 @@ function App() {
       ),
     [customers, segmentFilter]
   );
-
-  if (error) {
-    return <main className="state-message error">{error}</main>;
-  }
 
   if (!summary) {
     return <main className="state-message">Loading analytics…</main>;
