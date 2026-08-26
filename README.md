@@ -4,6 +4,10 @@ A privacy-safe, full-stack portfolio project demonstrating customer analytics, K
 
 > **Privacy notice:** This repository contains no real customer records, employer data, internal banking logic, or confidential files. Every sample record is fictional.
 
+## Live demo
+
+[Open the interactive Customer Analytics Dashboard](https://heffati1367-boop.github.io/customer-analytics-dashboard-demo/)
+
 ## What this project demonstrates
 
 - Customer segmentation by portfolio value
@@ -78,7 +82,7 @@ frontend/src/styles.css   Responsive dashboard styling
 
 - Add automated tests and CI
 - Add multi-period trend data
-- Add screenshots and a hosted live demo
+- Add dashboard screenshots
 
 ## Author
 
