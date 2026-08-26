@@ -106,7 +106,7 @@ function App() {
         <KpiCard label="Active customers" value={number.format(summary.active_customers)} />
         <KpiCard label="New customers" value={number.format(summary.new_customers)} tone="teal" />
         <KpiCard label="VIP customers" value={number.format(summary.vip_customers)} tone="amber" />
-        <KpiCard label="Active portfolio" value={money.format(summary.total_portfolio_value)} />
+        <KpiCard label="Active Customer Value" value={money.format(summary.total_portfolio_value)} />
         <KpiCard label="Retention rate" value={`${summary.retention_rate}%`} tone="teal" />
         <KpiCard label="Churn rate" value={`${summary.churn_rate}%`} tone="amber" />
       </section>
@@ -116,7 +116,7 @@ function App() {
           <div className="panel-heading">
             <div>
               <p className="section-label">SEGMENT PERFORMANCE</p>
-              <h2>Active portfolio by segment</h2>
+              <h2>Active Customer Value by Segment</h2>
             </div>
           </div>
           <div className="chart">
