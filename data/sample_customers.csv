@@ -1,0 +1,13 @@
+customer_id,segment,portfolio_value,active,previous_period,region
+CUST-001,High Value,850000,true,true,North
+CUST-002,High Value,720000,true,true,Central
+CUST-003,High Value,640000,false,true,West
+CUST-004,Mid Value,420000,true,true,Central
+CUST-005,Mid Value,360000,true,true,East
+CUST-006,Mid Value,310000,false,true,North
+CUST-007,Mid Value,280000,true,false,West
+CUST-008,Standard,160000,true,true,East
+CUST-009,Standard,130000,true,true,Central
+CUST-010,Standard,90000,false,true,North
+CUST-011,Standard,110000,true,false,South
+CUST-012,Standard,75000,true,false,South
